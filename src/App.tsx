@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {NewTicket} from "./components/NewTicket";
+import AllDialogs from "./components/AllDialogs";
+import Dialog from "./components/Dialog";
+import {DialogFunc} from "./components/DialogFunc";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+          <Routes>
+              <Route path="/my_dialogs" element={<AllDialogs />}/>
+              <Route path="/new_dialog" element={<NewTicket />}/>
+              <Route path="/dialog/:id" element={<DialogFunc />}/>
+          </Routes>
+      </BrowserRouter>
     </div>
   );
 }
