@@ -1,7 +1,6 @@
 import React from "react";
 import SockJS from 'sockjs-client'
-import Stomp from 'stompjs'
-import Message from "../models/Message";
+import Stomp, {Message} from 'stompjs'
 import DialogModel from "../models/DialogModel";
 
 interface DialogProps {
